@@ -113,8 +113,8 @@ Servers may receive a <a href="https://docs.microsoft.com/windows/desktop/WinAut
 
 When servers call this function, they must be ready to handle <a href="https://docs.microsoft.com/windows/desktop/WinAuto/wm-getobject">WM_GETOBJECT</a>, return an <a href="https://docs.microsoft.com/windows/desktop/api/oleacc/nn-oleacc-iaccessible">IAccessible</a> interface pointer, and handle any of the <b>IAccessible</b> methods.
 
-<b>Note to Server Developers:  </b>When you call <b>NotifyWinEvent</b>, if any clients are listening for that event in-context, their event handlers, which typically send <a href="https://docs.microsoft.com/windows/desktop/WinAuto/wm-getobject">WM_GETOBJECT</a> and call <a href="https://docs.microsoft.com/windows/desktop/api/oleacc/nn-oleacc-iaccessible">IAccessible</a> methods, will execute before <b>NotifyWinEvent</b> returns. When you call <b>NotifyWinEvent</b>, you should be prepared to handle these calls, if they occur. If you need to do extra setup to allow for this, you should do so before you call <b>NotifyWinEvent</b>, not after.
-
+<b>Note to Server Developers:  </b>When you call <b>NotifyWinEvent</b>, if any clients are listening for that event in-context, their event handlers, which typically send <a href="https://docs.microsoft.com/windows/desktop/WinAuto/wm-getobject">WM_GETOBJECT</a> and call <a href="https://docs.microsoft.com/windows/desktop/api/oleacc/nn-oleacc-iaccessible">IAccessible</a> methods, will execute before <b>NotifyWinEvent</b> returns. When you call <b>NotifyWinEvent</b>, you should be prepared to handle these calls, if they occur. If you need to do extra setup to allow for this, you should do so before you call <b>NotifyWinEvent</b>, not after.
+Here may not correct, from testing result, the NotifyWinEvent returns before client execution.
 
 
 
